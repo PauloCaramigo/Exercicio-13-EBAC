@@ -1,0 +1,124 @@
+@use "variaveis";
+@use "mixins";
+
+.header {
+    height: 30px;
+
+    background-color: variaveis.$header_color;
+    padding: 10px;
+
+    @include mixins.centralizarFlex;
+
+    &__logo {
+        height: 100%;
+    }
+
+    &__logo--big {
+        width: 50vh;
+    }
+}
+
+.nav__menu {
+    display: grid;
+    list-style: none;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: variaveis.$gap;
+}
+
+.menu__item {
+    @include mixins.centralizarFlex;
+}
+
+.home__paragrafo {
+    width: 40%;
+}
+
+.servicos__jobs:nth-child(1) {
+    background-color: rgb(255, 82, 82);
+}
+
+.servicos__jobs:nth-child(2) {
+    background-color: rgb(82, 255, 82);
+}
+
+.servicos__jobs:nth-child(3) {
+    background-color: rgb(82, 82, 255);
+}
+
+.servicos__jobs:nth-child(4) {
+    background-color: rgb(255, 255, 82);
+}
+
+.servicos__jobs:nth-child(5) {
+    background-color: rgb(255, 82, 255);
+}
+
+.servicos__jobs:nth-child(6) {
+    background-color: rgb(82, 255, 255);
+}
+
+.depoimentos__avaliacoes {
+    @include mixins.border;
+
+    padding: 10px;
+
+    display: flex;
+}
+
+.avaliacoes__profile {
+    margin-right: 10px;
+}
+
+.main__form {
+    display: flex;
+    flex-direction: column;
+
+    width: 50vh;
+
+    @include mixins.border;
+
+    padding: 30px;
+
+    &--negrito {
+        font-weight: bold;
+    }
+}
+
+.form {
+    &__input {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    &__mensagem {
+        height: 25vh;
+    }
+    
+    &__button {
+        width: 10vh;
+
+        margin-top: 10px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 740px) {
+    .header__logo--big {
+        margin-bottom: 30px;
+    }
+    
+    .home__paragrafo {
+        width: 100%;
+    }
+}
+
+@media (min-width: 741px) and (max-width:1080px) {
+    .header__logo--big {
+        margin-bottom: 30px;
+    }
+
+    .home__paragrafo {
+        width: 100%;
+    }
+}
